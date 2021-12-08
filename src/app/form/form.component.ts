@@ -111,54 +111,10 @@ export class FormComponent implements OnInit {
       Email: this.arr[index].Email,
     }
   }
-
-
-
-
-  form() {
-
-    if (!this.name || !this.Pseudo || !this.Email) {
-      return console.log('pas bon')
-    }
-
-    else {
-      if (this.arr.length == 0) {
-        let json = {
-          id: 1,
-          name: this.name,
-          Pseudo: this.Pseudo,
-          Email: this.Email,
-        }
-        this.arr.push(json);
-        localStorage.setItem('contact', JSON.stringify(this.arr));
-        this.name = "";
-        this.Pseudo = "";
-        this.Email = "";
-      }
-      else {
-        let m = this.arr.length - 1
-        let json = {
-          id: this.arr[m].id + 1,
-          name: this.name,
-          Pseudo: this.Pseudo,
-          Email: this.Email,
-        }
-        this.arr.push(json);
-        localStorage.setItem('contact', JSON.stringify(this.arr));
-        this.name = "";
-        this.Pseudo = "";
-        this.Email = "";
-      }
-    }
-
-  }
-
+  
   Recup(id: number, x: Arr) {
     this.id = id
     this.name = name
-
-
-
     this.jsonX = {
       id: x.id,
       name: x.name,
