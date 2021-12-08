@@ -110,25 +110,10 @@ export class FormComponent implements OnInit {
       Pseudo: this.arr[index].Pseudo,
       Email: this.arr[index].Email,
     }
-
-    // if (this.test2 !== this.test2) {
-    //   this.arr.push(json);
-    //   localStorage.setItem('contact', JSON.stringify(this.arr));
-    // } else {
-    //   console.log("hello")
-    // }
-    // console.log(json)
-    // this.arr.push(json);
-    // localStorage.setItem('contact', JSON.stringify(this.arr));
-    // this.arr.splice(index, 1)
-    // localStorage.setItem('contact', JSON.stringify(this.arr));
-
   }
 
 
 
-
-  //form
 
   form() {
 
@@ -169,7 +154,6 @@ export class FormComponent implements OnInit {
   }
 
   Recup(id: number, x: Arr) {
-    // console.log(id)
     this.id = id
     this.name = name
 
@@ -184,12 +168,6 @@ export class FormComponent implements OnInit {
 
     this.jsonX = JSON.stringify(this.jsonX)
     console.log(this.jsonX)
-
-
-    // alert( JSON.stringify(this.jsonX) )
-
-
-
   }
 
 

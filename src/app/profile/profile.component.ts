@@ -24,24 +24,12 @@ export class ProfileComponent implements OnInit {
   }
 
   changeUserName(e: any,) {
-    var kittensFromLocalStorage = JSON.parse(localStorage.getItem('contact') || '');
+    var LocalStorage = JSON.parse(localStorage.getItem('contact') || '');
 
 
     console.log(this.tabpos)
-    kittensFromLocalStorage[this.tabpos].name = this.selectedHero.name;
-    localStorage.setItem("contact", JSON.stringify(kittensFromLocalStorage));
+    LocalStorage[this.tabpos].name = this.selectedHero.name;
+    localStorage.setItem("contact", JSON.stringify(LocalStorage));
 
   }
-
-
-  // onSelect(hero: Arr): void {
-  //   // console.log(this.arr)
-  //   this.selectedHero = hero;
-  //   // this.arr.push(this.selectedHero);
-
-  //   // localStorage.setItem('contact', JSON.stringify(hero));
-
-  // }
-
-
 }
