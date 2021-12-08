@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <p>Nom Complet<input [(ngModel)]="name"></p>
-    <p>Pseudo<input [(ngModel)]="Pseudo"></p>
-    <p>Email<input [(ngModel)]="Email"></p>
+    <form [formGroup]="bioSection" (ngSubmit)="callingFunction()"> 
+    <p>Nom Complet<input formControlName="name"></p>
+    <p>Pseudo<input formControlName="Pseudo"></p>
+    <p>Email<input formControlName="Email"></p>
 
-<button (click)="form()"> Ajouter</button>
+    <button type="submit" [disabled]="!bioSection.valid"> Ajouter</button>
+</form>
 
-<div *ngFor="let x of arr; let index = index;">
-    {{ x.name }}
-    <button></button>
+    <!-- <div *ngFor="let x of arr; let index = index;">
 
-  </div>
+        <button (click)="Recup(x.id,x)">{{ x.name }}</button>
 
-  <app-profile>
-      
-  </app-profile>
+    </div> -->
+
+
+    <h2>Contact</h2>
+    <ul class="heroes">
+        <li *ngFor="let hero of arr;let index = index;" [class.selected]="hero === selectedHero" (click)="onSelect(hero,index)">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </li>
+    </ul>
+
+    <app-profile [selectedHero]="selectedHero" [tabpos]="tabpos"  >
+
+    </app-profile>
 
 
 </body>
-</html>
 
+</html>
