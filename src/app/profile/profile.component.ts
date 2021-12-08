@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeUserName(e: any,) {
+  changeUserName() {
     var LocalStorage = JSON.parse(localStorage.getItem('contact') || '');
 
 
